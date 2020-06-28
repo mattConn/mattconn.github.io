@@ -1,0 +1,42 @@
+baseurl = "/"
+title = "My site."
+canonifyurls = true
+languageCode = "en-US"
+paginate = 5
+theme = "hugo-dusk"
+
+[author]
+  name = ""
+
+SectionPagesMenu = "main"
+
+# Configure syntax highlight
+[markup]
+  [markup.highlight]
+    style = "rrt" # dark themes: monokai, api, fruity, native, rrt, swapoff
+
+[[menu.main]]
+  name = "Categories"
+  weight = 2 
+  identifier = "category"
+  url = "/categories/"
+
+[[menu.main]]
+  name = "About"
+  weight = 1
+  identifier = "about"
+  url = "/about"
+
+[[menu.main]]
+  name = "Posts"
+  weight = 3
+  identifier = "posts"
+  url = "/posts/"
+
+
+[params.meta]
+  keywords = "blog, tech"
+  description = "Personal blog."
+
+[params]
+  theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
