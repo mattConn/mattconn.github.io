@@ -90,15 +90,15 @@ This is one of the smaller rational approximations of pi, and it is a bad one; n
 <br>
 Looking at the table shown earlier, quotients 1/7, then 8/7, both have the same mantissa as 22/7. We can then see that we can pick the offset from 1/7 that we want (from the available offsets 0, 4, 5, 2, 1 and 3), knowing the nature of division by 7, which can be modeled by an expression like the one below, the braces denoting the fractional part.
 
-$$\left \{ \frac{(7 \cdot n) \ + k}{7} \right \}$$
+$$ \{ \frac{(7 \cdot n) \ + k}{7}  \}$$
 
 Here, n denotes some integral value that will give us a multiple of seven, with k denoting an increase in this multiple necessary to give us a mantissa after division by seven.  
 Then if we wanted to design a rational number that looked something like pi, we could consider that 1/7 has the digits 1 and 4 at the beginning of its mantissa. All that's left would be the integer 3 in front. Using the expression above, we would wind up with:
 
-$$\left \{ \frac{(7 \cdot 3) \ + 1}{7} \right \}$$
+$$\{ \frac{(7 \cdot 3) \ + 1}{7} \}$$
 
 This gets us our integer 3 and the mantissa we want through an addition of 1. As seen in the table, the first division by 7 out of any 7 divisions will have a mantissa starting with 1 and 4.
 
-$$\left \{ \frac{22}{7} \right \} \ = \ \left \{\frac{1}{7} \right \}$$
+$$\{ \frac{22}{7} \} \ = \ \{\frac{1}{7} \}$$
 
 If we wanted the next offset available (mantissa of 1/7 shifted 4 digits right) but the same integer part (3.0), we would use the same expression above, but add 2 instead of 1, to get the second offset, and so on.  
