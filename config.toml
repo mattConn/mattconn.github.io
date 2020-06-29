@@ -22,6 +22,12 @@ SectionPagesMenu = "main"
   url = "/categories/"
 
 [[menu.main]]
+  name = "Software"
+  weight = 1
+  identifier = "software"
+  url = "/software"
+
+[[menu.main]]
   name = "About"
   weight = 1
   identifier = "about"
