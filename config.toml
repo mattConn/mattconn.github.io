@@ -3,7 +3,7 @@ title = "Foobiebletch.net"
 canonifyurls = true
 languageCode = "en-US"
 paginate = 5
-theme = "hugo-dusk"
+theme = "etch"
 
 [author]
   name = ""
@@ -16,29 +16,16 @@ SectionPagesMenu = "main"
     style = "rrt" # dark themes: monokai, api, fruity, native, rrt, swapoff
 
 [[menu.main]]
-  name = "Categories"
-  weight = 3 
-  identifier = "category"
-  url = "/categories/"
-
-[[menu.main]]
   name = "Software"
-  weight = 1
+  weight = 2
   identifier = "software"
   url = "/software"
 
 [[menu.main]]
   name = "About"
-  weight = 1
+  weight = 3
   identifier = "about"
   url = "/about"
-
-[[menu.main]]
-  name = "Posts"
-  weight = 2
-  identifier = "posts"
-  url = "/posts/"
-
 
 [params.meta]
   keywords = "blog, tech"
