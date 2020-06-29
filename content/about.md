@@ -6,4 +6,7 @@ draft: true
 
 # About
 
-This is the about page test copy.
+This is the blog of Matthew Connelly. More to come soon.
+
+[GitHub](https://github.com/mattConn)
+[Homepage](https://mattConn.dev)
