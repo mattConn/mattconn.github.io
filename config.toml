@@ -17,9 +17,15 @@ SectionPagesMenu = "main"
 
 [[menu.main]]
   name = "Software"
-  weight = 2
+  weight = 1
   identifier = "software"
   url = "/software"
+
+[[menu.main]]
+  name = "Posts"
+  weight = 2
+  identifier = "posts"
+  url = "/posts"
 
 [[menu.main]]
   name = "About"
