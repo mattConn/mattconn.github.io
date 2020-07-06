@@ -64,3 +64,70 @@ Good:
 em++ *.cpp -o snake.html -g -lm --bind -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file assets/ --use-preload-plugins
 ```
 No asyncify.
+
+# Maintaining interoperability
+Makefile targets look like this, snake-game being for desktop and snake.html for wasm:
+```
+snake-game: *.cpp
+        clang++ -std=c++11 -I /usr/include/SDL2/ -l SDL2 -l SDL2_image $^ -o $@
+
+snake.html: *.cpp
+        em++ $^ -o $@ -g -lm --bind -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' --preload-file assets/ --use-preload-plugins 
+
+```
+
+I also added define guards around emscripten function calls and the header as well.
+https://dev.to/kibebr/i-made-a-game-in-c-run-in-a-web-browser-and-so-can-you-4deb
+At the top of main.cpp:
+
+```
+.
+.
+.
+
+#ifdef __EMSCRIPTEN__
+#include "emscripten.h"
+#endif
+
+.
+.
+.
+```
+and, towards the end of mainloop():
+
+```
+.
+.
+.
+
+if(quit) {
+	#ifdef __EMSCRIPTEN__
+	emscripten_cancel_main_loop();
+	#endif
+
+	SDLw::close(); // My wrapper function/namespace
+}
+
+.
+.
+.
+```
+and at the bottom of main():
+```
+.
+.
+.
+
+        #ifdef __EMSCRIPTEN__
+        emscripten_set_main_loop(mainloop, 0, 1);
+        #endif
+
+        #ifndef __EMSCRIPTEN__
+        while(!quit) mainloop();
+        #endif
+
+        return 0;
+}
+
+```
+
