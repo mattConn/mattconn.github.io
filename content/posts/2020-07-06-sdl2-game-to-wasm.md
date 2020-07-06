@@ -7,6 +7,7 @@ draft: true
 # Infinite loop error
 
 Need to move code:
+https://medium.com/@robaboukhalil/porting-games-to-the-web-with-webassembly-70d598e1a3ec
 Before (no good):
 ```
 int main()
