@@ -5,6 +5,7 @@ date: 2018-05-31 08:39:58 -0400
 comments: true
 description: Your name (or any word) can be converted to a decimal number for fun and obfuscation.
 image: name-as-number.png
+draft: true
 categories: ['mathematics']
 ---
 
