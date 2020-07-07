@@ -3,6 +3,7 @@ layout: post
 title: "A Pattern in Quotients of Seven and Rational Pi"
 date: 2018-05-01 08:39:58 -0400
 comments: true
+draft: true
 categories: ['mathematics']
 ---
  $$ \frac{1}{7} \ = \ 0.\overline{142857}  $$  
