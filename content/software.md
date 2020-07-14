@@ -12,9 +12,10 @@ After being generated with Go, these sums will be passed to a python program tha
 ---
 ## [WASM Snake](/snake-wasm)  
 ![](/images/snake.png)  
-The classic snake game, written in C++ and SDL2.
-
+The classic snake game, written in C++ and SDL2.  
 Ported to WASM for in-browser play.
+
+[How it was ported](/posts/2020-07-13-sdl2-game-to-wasm/)  
 
 ---
 
