@@ -5,7 +5,7 @@ title: "About"
 # Matthew Connelly
 
 ![](/images/me.png)  
-_Speaking about JavaScript Game Development at Brooklyn JS_
+_Speaking on JavaScript Game Development at Brooklyn JS_
 
 I'm a Computer Science undergraduate minoring in Math at the College of Staten Island, graduating Fall 2020.
 
