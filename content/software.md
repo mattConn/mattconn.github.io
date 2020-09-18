@@ -18,8 +18,3 @@ Ported to WASM for in-browser play.
 [How it was ported](/posts/2020-07-13-sdl2-game-to-wasm/)  
 
 ---
-
-## [GitHub Users](/gh-users)  
-![](/images/github-users.png)  
-Written in Go, this program will display the icons of up to 1,000 GitHub users over a specified range.  
-This program simply generates image tags linking images from "avatars1.githubusercontent.com/u/$NUMBER".
