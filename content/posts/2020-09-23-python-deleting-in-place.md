@@ -7,7 +7,7 @@ draft: false
 I want to delete certain Python elements "in-place"; no copies. To start, I want to see if I can delete every element in-place in the array:
 ```
 # An array of integers 0 through 9.
-array = [i for i in range(10)]
+array = [*range(10)]
 ```
 
 The approach below will not work:
@@ -92,4 +92,13 @@ while i < length:
         length -=1 
     i+=1
 ```
-This is a bit more to type, and uses two variables that are useless beyond the scope of this operation (a waste).
+This is a bit more to type, and uses two variables that are useless beyond the scope of this operation (a waste). But when can cut that down to one variable; we don't have to store length:
+
+```
+i = 0
+while i < len(array):
+    if array[i] % 2 != 0:
+        del array[i]
+    i+=1
+```
+The length of the array updates as elements are deleted, and `len` returns the new length every time, so we only need to manage where we are in the array.
