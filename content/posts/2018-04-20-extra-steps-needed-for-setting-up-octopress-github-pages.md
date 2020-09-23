@@ -3,6 +3,7 @@ layout: post
 title: "Extra Steps Needed for Setting Up Octopress with GitHub Pages"
 date: 2018-04-20 00:51:16 -0400
 comments: true
+draft: true
 categories: ['web development']
 ---
 

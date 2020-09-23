@@ -3,6 +3,7 @@ layout: post
 title: "Hosting Git Repos With a Web Frontend"
 date: 2017-08-02 00:21:17 -0400
 comments: true
+draft: true
 categories: ['web development']
 ---
 

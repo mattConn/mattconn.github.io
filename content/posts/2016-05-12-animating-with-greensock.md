@@ -8,6 +8,7 @@ description: >-
 robots: none
 published: true
 comments: true
+draft: true
 categories: ['web development']
 ---
 
