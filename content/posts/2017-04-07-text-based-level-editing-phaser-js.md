@@ -1,5 +1,5 @@
 ---
-title: Game Development - Text-based Level Editing and Phaser JS
+title: Text-based Level Editing and Phaser JS
 date: 2017-04-07 08:39:58 -0400
 layout: post
 description: >-

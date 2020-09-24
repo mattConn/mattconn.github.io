@@ -4,7 +4,11 @@ date: 2020-09-23T02:59:12-04:00
 draft: false 
 ---
 
-I want to delete certain Python elements "in-place"; no copies. To start, I want to see if I can delete every element in-place in the array:
+![](/images/python.png)
+
+_Some notes on learning Python._
+
+I want to delete certain Python elements "in-place"; no copies. To start, I will try to delete every element in the array:
 ```
 # An array of integers 0 through 9.
 array = [*range(10)]
@@ -102,3 +106,11 @@ while i < len(array):
     i+=1
 ```
 The length of the array updates as elements are deleted, and `len` returns the new length every time, so we only need to manage where we are in the array.
+
+# The Easiest Way
+```
+for i in array:
+    if i % 2 != 0:
+        array.remove(i)
+```
+The remove method! This will do it. Not pop, but remove.

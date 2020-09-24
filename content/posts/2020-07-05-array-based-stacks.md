@@ -3,6 +3,8 @@ title: "Comparing Array-Based Stacks in C and Go"
 date: 2020-07-05T20:36:18-04:00
 ---
 
+![](/images/gopher.png)
+
 I'll be comparing stack-based arrays in C and Go. There are many ways to implement a stack, but the aim here is for simplicity.
 
 # Stacks in C
