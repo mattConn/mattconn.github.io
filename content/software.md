@@ -18,3 +18,9 @@ Ported to WASM for in-browser play.
 [How it was ported](/posts/2020-07-13-sdl2-game-to-wasm/)  
 
 ---
+## [Interactive Web Terminal Demo](/interactive-web-terminal)  
+![](/images/terminal.png)  
+Boilerplate for in-browser text-based user interaction written in JasvaScript.  
+This is meant to be modified/extended, for both a purely frontend execution of console apps or as a client for server-side consoles.
+
+---
