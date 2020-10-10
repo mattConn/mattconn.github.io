@@ -6,9 +6,10 @@ title: "Software"
 ## [WASM Snake](/snake-wasm)  
 ![](/images/snake.png)  
 The classic snake game, written in C++ and SDL2.  
-Ported to WASM for in-browser play.
+Ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
+  
 
-[Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/)  
+[Try it out](/snake-wasm)  
 
 [Source Code](https://github.com/mattConn/snake-game)  
 
@@ -19,6 +20,8 @@ Ported to WASM for in-browser play.
 Boilerplate for in-browser text-based user interaction written in JasvaScript.  
 This is meant to be modified/extended, for both a purely frontend execution of console apps or as a client for server-side consoles.
 
+[Try it out](/interactive-web-terminal)  
+
 [Source Code](https://github.com/mattConn/interactive-web-terminal)  
 
 
@@ -28,6 +31,10 @@ This is meant to be modified/extended, for both a purely frontend execution of c
 ![](/images/graph.png)  
 Written in Go and Python, this program will take a numerical sequence and generate all sums of all subsets as an array. This array represents the breadth-first list of sums.  
 After being generated with Go, these sums will be passed to a python program that uses networkx to generate an image of the graph.
+
+
+[Try it out](/sum-subsets)  
+
 
 [Source Code](https://github.com/mattConn/sum-subsets-tree-generator)  
 
