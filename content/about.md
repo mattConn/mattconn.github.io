@@ -13,11 +13,7 @@ I enjoy programming in C++, Python, JavaScript and Go.
 
 You can contact me at matthew.b.connelly at gmail.
 
-[Twitter](https://twitter.com/mattconndev)
-
-[GitHub](https://github.com/mattConn)
-
-[Resume](https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc)
+[Twitter](https://twitter.com/mattconndev) | [GitHub](https://github.com/mattConn) | [Resume](https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc)
 
 
 # More Info
