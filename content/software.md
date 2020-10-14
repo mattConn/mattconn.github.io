@@ -1,22 +1,28 @@
 ---
 title: "Software"
 ---
-
----
 ## [WASM Snake](/snake-wasm)  
 ![](/images/snake.png)  
-The classic snake game, written in C++ and SDL2.  
-Ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
+The classic snake game, made with C++ and SDL2. Ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
   
 
-[Try it out](/snake-wasm) | [Source Code](https://github.com/mattConn/snake-game)  
+[Play](/snake-wasm) | [Source Code](https://github.com/mattConn/snake-game)  
 
 
 ---
+
+
+## [Spelling Bee](http://foobiebletch.net:8085/)  
+![](/images/spelling-bee.png)  
+A word-finding game like the NYT's spelling bee, made with React.
+
+[Play](http://foobiebletch.net:8085/) | [Source Code](https://github.com/mattConn/spelling-bee)  
+
+---
+
 ## [Interactive Web Terminal Demo](/interactive-web-terminal)  
 ![](/images/terminal.png)  
-Boilerplate for in-browser text-based user interaction written in JasvaScript.  
-This is meant to be modified/extended, for both a purely frontend execution of console apps or as a client for server-side consoles.
+Boilerplate for in-browser text-based user interaction, written in JasvaScript.  
 
 [Try it out](/interactive-web-terminal) | [Source Code](https://github.com/mattConn/interactive-web-terminal)  
 
@@ -25,8 +31,7 @@ This is meant to be modified/extended, for both a purely frontend execution of c
 
 ## [Sum of Subsets Tree Generator](/sum-subsets)  
 ![](/images/graph.png)  
-Written in Go and Python, this program will take a numerical sequence and generate all sums of all subsets as an array. This array represents the breadth-first list of sums.  
-After being generated with Go, these sums will be passed to a python program that uses networkx to generate an image of the graph.
+Generate the sums of all subsets of a number sequence and draw its corresponding graph. Written in Go and Python.
 
 
 [Try it out](/sum-subsets) | [Source Code](https://github.com/mattConn/sum-subsets-tree-generator)  
