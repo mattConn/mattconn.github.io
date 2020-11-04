@@ -11,15 +11,6 @@ The classic snake game, made with C++ and SDL2. Ported to WASM for in-browser pl
 
 ---
 
-
-## [Spelling Bee](http://foobiebletch.net:8085/)  
-![](/images/spelling-bee.png)  
-A word-finding game like the NYT's spelling bee, made with React.
-
-[Play](http://foobiebletch.net:8085/) | [Source Code](https://github.com/mattConn/spelling-bee)  
-
----
-
 ## [Interactive Web Terminal Demo](/interactive-web-terminal)  
 ![](/images/terminal.png)  
 Boilerplate for in-browser text-based user interaction, written in JasvaScript.  
@@ -31,7 +22,7 @@ Boilerplate for in-browser text-based user interaction, written in JasvaScript.
 
 ## [Sum of Subsets Tree Generator](/sum-subsets)  
 ![](/images/graph.png)  
-Generate the sums of all subsets of a number sequence and draw its corresponding graph. Written in Go and Python.
+Generate the sums of all subsets of a number sequence and draw its corresponding graph. Written in Go and Python with NetworkX.
 
 
 [Try it out](/sum-subsets) | [Source Code](https://github.com/mattConn/sum-subsets-tree-generator)  
