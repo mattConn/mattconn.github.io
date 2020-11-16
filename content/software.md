@@ -17,15 +17,3 @@ Boilerplate for in-browser text-based user interaction, written in JasvaScript.
 
 [Try it out](/interactive-web-terminal) | [Source Code](https://github.com/mattConn/interactive-web-terminal)  
 
-
----
-
-## [Sum of Subsets Tree Generator](/sum-subsets)  
-![](/images/graph.png)  
-Generate the sums of all subsets of a number sequence and draw its corresponding graph. Written in Go and Python with NetworkX.
-
-
-[Try it out](/sum-subsets) | [Source Code](https://github.com/mattConn/sum-subsets-tree-generator)  
-
-
----
