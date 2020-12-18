@@ -1,7 +1,7 @@
 ---
 title: "Checkerboard Moves and Bipartite Graphs"
 date: 2020-09-17T02:59:12-04:00
-draft: false 
+draft: true 
 ---
 
 I was wondering the other day, if you were on a checkerboard, what would be your smallest move?
