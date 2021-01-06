@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "MattConnDev.com"
+title = "MattConnDev"
 canonifyurls = true
 languageCode = "en-US"
 paginate = 5
@@ -16,32 +16,21 @@ SectionPagesMenu = "main"
     style = "rrt" # dark themes: monokai, api, fruity, native, rrt, swapoff
 
 [[menu.main]]
-  name = "Software"
+  name = "About"
   weight = 1
-  identifier = "software"
-  url = "/software"
+  identifier = "about"
+  url = "/about"
 
 [[menu.main]]
-  name = "Posts"
+  name = "Software"
   weight = 2
-  identifier = "posts"
-  url = "/posts"
+  identifier = "software"
+  url = "/software"
 
 [[menu.main]]
   name = "Resume"
   weight = 3
   url = "https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc"
-
-[[menu.main]]
-  name = "GitHub"
-  weight = 4
-  url = "https://github.com/mattConn"
-  
-[[menu.main]]
-  name = "About"
-  weight = 5
-  identifier = "about"
-  url = "/about"
 
 [params.meta]
   keywords = "blog, tech"

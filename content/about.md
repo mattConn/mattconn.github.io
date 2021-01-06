@@ -7,10 +7,13 @@ title: "About"
 ![](/images/me.png)  
 _Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
 
-I recently graduated with a BS in Computer Science and a minor in Math from the College of Staten Island in Fall 2020.
+I am a Fall 2020 Computer Science graduate from the College of Staten Island looking for my next role as a Software Engineer. Prior to returning to college, I worked as a Web Developer for The Charles NYC.
 
-My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go. I also have an interest in graph theory which I am currently pursuing.
+My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go. I also have an interest in Graph Theory which I am currently pursuing.
 
 You can contact me at mattconndev at gmail.
+
+My GitHub: [github.com/mattConn](https://github.com/mattConn)
+
 
 This website was generated with Hugo. [Source](https://github.com/mattConn/mattconndev)
