@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Foobiebletch.net"
+title = "MattConnDev.com"
 canonifyurls = true
 languageCode = "en-US"
 paginate = 5
@@ -28,8 +28,18 @@ SectionPagesMenu = "main"
   url = "/posts"
 
 [[menu.main]]
-  name = "About"
+  name = "Resume"
   weight = 3
+  url = "https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc"
+
+[[menu.main]]
+  name = "GitHub"
+  weight = 4
+  url = "https://github.com/mattConn"
+  
+[[menu.main]]
+  name = "About"
+  weight = 5
   identifier = "about"
   url = "/about"
 

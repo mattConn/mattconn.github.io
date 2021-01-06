@@ -5,19 +5,12 @@ title: "About"
 # Matthew Connelly
 
 ![](/images/me.png)  
-_Speaking on JavaScript Game Development at Brooklyn JS_
+_Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
 
-I'm a Computer Science undergraduate minoring in Math at the College of Staten Island, graduating Fall 2020.
+I recently graduated with a BS in Computer Science and a minor in Math from the College of Staten Island in Fall 2020.
 
-My favorite programming languages in no particular order are: C++, Python, JavaScript and Go. 
+My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go. I also have an interest in graph theory which I am currently pursuing.
 
-You can contact me at matthew.b.connelly at gmail.
+You can contact me at mattconndev at gmail.
 
----
-
-[Twitter](https://twitter.com/mattconndev) | [GitHub](https://github.com/mattConn) | [Resume](https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc)
-
-
-This website was generated with Hugo. [Source Code](https://github.com/mattConn/foobiebletch)
-
-"Foobiebletch" is the name of a scroll that has yet to be identified.
+This website was generated with Hugo. [Source](https://github.com/mattConn/mattconndev)

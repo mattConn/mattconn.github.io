@@ -156,7 +156,7 @@ and at the bottom of main():
 
 I will probably separate my code like the above in the future to keep it open for WASM compilation, much like we now develop webpages mobile-first.
 
-If you've made it this far, you'd may as well play my Snake clone here: http://foobiebletch.net/snake-wasm/
+If you've made it this far, you'd may as well play my Snake clone here: http://mattconndev.com/snake-wasm/
 
 # Sources
 
