@@ -28,8 +28,13 @@ SectionPagesMenu = "main"
   url = "/software"
 
 [[menu.main]]
-  name = "Resume"
+  name = "GitHub"
   weight = 3
+  url = "https://github.com/mattConn"
+
+[[menu.main]]
+  name = "Resume"
+  weight = 4
   url = "https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc"
 
 [params.meta]
