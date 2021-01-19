@@ -17,25 +17,22 @@ SectionPagesMenu = "main"
 
 [[menu.main]]
   name = "About"
-  weight = 1
+  weight = 2
   identifier = "about"
-  url = "/about"
+  url = "/"
 
 [[menu.main]]
   name = "Software"
-  weight = 2
+  weight = 3
   identifier = "software"
   url = "/software"
 
 [[menu.main]]
-  name = "GitHub"
-  weight = 3
-  url = "https://github.com/mattConn"
-
-[[menu.main]]
-  name = "Resume"
+  name = "Posts"
   weight = 4
-  url = "https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc"
+  identifier = "posts"
+  url = "/posts"
+
 
 [params.meta]
   keywords = "blog, tech"

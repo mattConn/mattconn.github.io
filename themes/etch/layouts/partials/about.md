@@ -9,4 +9,6 @@ My favorite programming languages in no particular order are: C/C++, Python, Jav
 
 You can contact me at mattconndev at gmail.
 
+[GitHub](https://github.com/mattConn) | [Resume](https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc)
+
 This website was generated with Hugo. [Source](https://github.com/mattConn/mattconndev)
