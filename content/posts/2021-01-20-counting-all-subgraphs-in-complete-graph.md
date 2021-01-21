@@ -1,5 +1,5 @@
 ---
-title: "Counting All Subgraphs in \\(k_n\\)"
+title: "Counting All Subgraphs in a Complete Graph"
 date: 2021-01-20T20:36:18-04:00
 ---
 
@@ -21,9 +21,7 @@ e_n &  &  & & 0
 \end{equation*}
 
 
-The upper (or lower) triangle will have \\(\frac{{n(n-1)}}{2}\\) components. This expression is derived from the formula for the sum of consecutive integers, because each row in the triangle has one less component than the previous. But because the upper left 0 of the diagonal removes one component from our first row, we sum consecutive integers from 1 to \\(n-1\\): \\(\frac{{(n-1)((n-1)+1)}}{2} = \frac{{n(n-1)}}{2} \\)
-
-Next, flatten this triangle into a bit string, and then there are \\(2^{ \frac{{n(n-1)}}{2} }\\) spanning subgraphs. (\\(n\\) 0's to \\(n\\) 1's, which represent a triangle of all 0's to a triangle of all 1's.)
+The upper (or lower) triangle will have \\(\frac{{n(n-1)}}{2}\\) components. Flatten this triangle into a bit string, and then there are \\(2^{ \frac{{n(n-1)}}{2} }\\) spanning subgraphs. (\\(n\\) 0's to \\(n\\) 1's, which represent a triangle of all 0's to a triangle of all 1's.)
 
 Then, apply this to all \\(k_n\\) from \\(n\\) down to 1.
 
@@ -36,6 +34,7 @@ This sum represents the number of subgraphs in \\(k_n\\).
 ---
 
 ## An example with \\(k_4\\):
+![](/images/k4-graph.png)
 
 \begin{equation*}
 k_4 = 
@@ -65,7 +64,7 @@ $$
 b(U_4) = 111111
 $$
 
-Where \\(| b(U_4) | = \frac{{n(n-1)}}{2} = \frac{{4(3)}}{2} = 6\\), which checks out.
+Where \\(| b(U_4) | = \frac{{n(n-1)}}{2} = \frac{{4(3)}}{2} = 6\\).
  
 Then you can represent all spanning subgraphs as 000000, 000001, 000010, ... 111111.
 
