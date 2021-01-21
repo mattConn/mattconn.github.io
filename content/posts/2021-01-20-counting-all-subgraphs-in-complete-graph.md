@@ -1,5 +1,5 @@
 ---
-title: "Counting All Subgraphs in a Complete Graph"
+title: "Counting All Subgraphs in a Complete Graph with Adjacency Matrices"
 date: 2021-01-20T20:36:18-04:00
 ---
 
