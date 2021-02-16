@@ -2,7 +2,7 @@
 title: "Software"
 ---
 
-## [Spelling Bee](http://foobiebletch.net:8085/)  
+## [Spelling Bee](http://mattconndev.com:8085/)  
 ![](/images/spelling-bee.png)  
 A word-finding game like the NYT's spelling bee, made with React.
 
