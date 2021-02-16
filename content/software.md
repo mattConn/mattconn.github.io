@@ -10,7 +10,7 @@ A word-finding game like the NYT's spelling bee, made with React.
 
 ---
 
-## [Graph Builder](/graph-builder)
+## [Graph Builder](http://mattconndev.com/graph-builder)
 ![](/images/graph_builder.png)  
 Build graphs and generate their images, adjacency matrices and JSON data with Flask and NetworkX.
   
@@ -18,7 +18,7 @@ Build graphs and generate their images, adjacency matrices and JSON data with Fl
 
 ---
 
-## [Interactive Web Terminal](/interactive-web-terminal)  
+## [Interactive Web Terminal](http://mattconndev.com/interactive-web-terminal)  
 ![](/images/terminal.png)  
 An in-browser console with extensible functionality, made with pure JavaScript.  
 
@@ -26,7 +26,7 @@ An in-browser console with extensible functionality, made with pure JavaScript.
 
 
 ---
-## [WASM Snake](/snake-wasm)  
+## [WASM Snake](http://mattconndev.com/snake-wasm)  
 ![](/images/snake.png)  
 The classic snake game, made with C++ and SDL2. Ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
   
