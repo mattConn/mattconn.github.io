@@ -2,19 +2,20 @@
 title: "Software"
 ---
 
-## [Spelling Bee](http://mattconndev.com:8085/)  
-![](/images/spelling-bee.png)  
-A word-finding game like the NYT's spelling bee, made with React.
-
-[Play](http://mattconndev.com:8085/) | [Source Code](https://github.com/mattConn/spelling-bee)  
-
----
 
 ## [Graph Builder](http://mattconndev.com/graph-builder)
 ![](/images/graph_builder.png)  
 Build graphs and generate their images, adjacency matrices and JSON data with Flask and NetworkX.
   
 [Try It Out](http://mattconndev.com/graph-builder) | [Source Code](https://github.com/mattConn/graph-builder)  
+
+---
+
+## [Spelling Bee](http://mattconndev.com:8085/)  
+![](/images/spelling-bee.png)  
+A word-finding game like the NYT's spelling bee, made with React.
+
+[Play](http://mattconndev.com:8085/) | [Source Code](https://github.com/mattConn/spelling-bee)  
 
 ---
 
