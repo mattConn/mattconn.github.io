@@ -3,11 +3,15 @@
 ![](/images/me.png)  
 _Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
 
-I'm a Fall 2020 Computer Science graduate with a minor in Math from the College of Staten Island, looking for my next role as a Software Engineer. Prior to returning to college, I worked as a Frontend Developer for The Charles NYC.
+I'm a Fall 2020 Computer Science graduate with a minor in Math from the CUNY College of Staten Island, looking for my next role as a Software Engineer.  
+
+Prior to returning to college, I worked as a Frontend Developer for The Charles NYC from 2016 to 2017, after having graduated with a BS in Communications in 2016, also from the College of Staten Island.
+
+I am currently exploring Graph Theory and learning Go, while contributing to the graph package of [Gonum](https://github.com/gonum/gonum). 
 
 My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go.
 
-You can contact me at mattconndev at gmail.
+You can contact me at matthew.b.connelly at gmail.
 
 [GitHub](https://github.com/mattConn)  
 [Twitter](https://twitter.com/mattconndev)  

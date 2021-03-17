@@ -15,4 +15,4 @@ _A ruled surface\* with wavy rulings, a subject of my independent study, made wi
 I am now a graduate of the College of Staten Island as of Fall 2020 and I've come away with a lot, having spent my time enrolled learning how to program using C++ primarily, and discovering a new appreciation for Mathematics, having done an independent study on Differential Geometry, and now exploring Graph Theory.
 
 
-If you've read this far, thank you for taking the time, and feel free to drop me a line at mattconndev at gmail dot com if you're looking for a Software Engineer or just to say hi.
+If you've read this far, thank you for taking the time, and feel free to drop me a line at matthew.b.connelly at gmail if you're looking for a Software Engineer or just to say hi.
