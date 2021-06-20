@@ -7,8 +7,6 @@ I'm a Fall 2020 Computer Science graduate with a minor in Math from the CUNY Col
 
 Prior to returning to college, I worked as a Frontend Developer for The Charles NYC from 2016 to 2017, after having graduated with a BS in Communications in 2016, also from the College of Staten Island.
 
-I am currently exploring Graph Theory and learning Go, while contributing to the graph package of [Gonum](https://github.com/gonum/gonum). 
-
 My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go.
 
 You can contact me at matthew.b.connelly at gmail.
