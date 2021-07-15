@@ -14,6 +14,5 @@ You can contact me at matthew.b.connelly at gmail.
 [GitHub](https://github.com/mattConn)  
 [Twitter](https://twitter.com/mattconndev)  
 [LinkedIn](https://www.linkedin.com/in/mattconndev/)  
-[Resume](https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc)
 
 This website was generated with Hugo. [Source](https://github.com/mattConn/mattconndev)

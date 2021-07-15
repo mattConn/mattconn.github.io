@@ -39,6 +39,12 @@ SectionPagesMenu = "main"
   identifier = "posts"
   url = "/posts"
 
+[[menu.main]]
+  name = "Resume"
+  weight = 5
+  identifier = "resume"
+  url = "/resume"
+
 
 [params.meta]
   keywords = "blog, tech"
