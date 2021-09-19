@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/x-mathjax-config">
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+    <title>Text-based Level Editing and Phaser JS</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body><header id="banner">
+    <h2><a href="/">MattConnDev</a></h2>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/" title="">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about" title="">About</a>
+            </li>
+            
+            <li>
+                <a href="/software" title="">Software</a>
+            </li>
+            
+            <li>
+                <a href="/posts" title="">Posts</a>
+            </li>
+            
+            <li>
+                <a href="/resume" title="">Resume</a>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Text-based Level Editing and Phaser JS</h1><time>April 7, 2017</time></header><p>If you are familiar with roguelikes (turn-based dungeon crawlers) such as Nethack, then you are no doubt familiar with the idea of a game&rsquo;s elements being displayed entirely as ASCII characters.</p>
+<p>Here I will explain how I use a similar approach to create the layout of rooms in a game I am working on and how I use Phaser (JS game engine) to render the rooms based on my layouts.</p>
+<p>The following array of strings represents a single room:</p>
+<pre tabindex="0"><code>   [
+    //1         12             25
+    'ppppppppppppppppppppppppp',//1
+    'p------------------------',//2
+    'p------------------------',//3
+    'pppppppppp---------------',//4
+    'p----------------E-------',//5
+    'p--------------pppppppppp',//6
+    'p------------------------',//7
+    'p------E-E---------------',//8
+    'pppppppppp---------------',//9
+    'p------------------------',//10
+    'p----------------E-E-E---',//11
+    'p--------------pppppppppp',//12
+    'p-----------------------p',//13
+    'p-----------------------p',//14
+    'p-----------ppppppppppppp',//15
+    'p---------ppppppppppppppp',//16
+    'p------pppppppppppppppppp',//17
+    'ppppppppppppppppppppppppp',//18
+    'ppppppppppppppppppppppppp' //19
+    ]
+</code></pre><p>&ldquo;E&rdquo; represents an enemy, and &ldquo;p&rdquo; represents an immovable block that can be used as a platform or wall. A dash represents empty space, simply because I find it easier to read than whitespace, although I am not exactly counting dashes to find any kind of distance.</p>
+<p>The commented-out numbers on top and on the right represent columns and rows respectively; I have divided a canvas 800 pixels wide and 600 pixels high into 25-by-19 32-pixel squares.</p>
+<h3 id="how-and-when-a-room-is-rendered">How and when a room is rendered</h3>
+<ol>
+<li>
+<p>The player collides with the edge of the world (canvas)</p>
+</li>
+<li>
+<p>The player&rsquo;s x-position is then changed to the position of the edge opposite of the collision (right edge collision, player moved to far-left of canvas; left edge collision, player moved to far-right of canvas); this gives the appearance of entering a new room</p>
+</li>
+<li>
+<p>The room is then cleared, using Phaser&rsquo;s <code>sprite.kill()</code> method</p>
+</li>
+<li>
+<p>A variable integer is then increased or decreased by 1 depending on the edge of collision (right, +1; left, -1), and this integer is then used as our room&rsquo;s index in our level array.</p>
+<ul>
+<li>So if our current room&rsquo;s index is 0 (the first room in the level array), and the player collides with the right edge of the canvas, our integer increases to 1, and we render the room who&rsquo;s index is 1 (our second room in the level array)</li>
+</ul>
+</li>
+<li>
+<p>After getting the room we want by index, we check each string within the room array; each of these strings can be looked at as a row of things that can be rendered onto the canvas, from the top of the canvas to the bottom.</p>
+</li>
+<li>
+<p>For each row (string) in the room array, we check each character by its index using <code>String.charAt()</code>.</p>
+</li>
+<li>
+<p>Using a switch statement, the character can be matched to a case; if and after being matched, we will call Phaser&rsquo;s <code>group.create()</code> method to render the matched sprite or image.</p>
+</li>
+</ol>
+<p>So using the room layout above, <code>level1[0][8].charAt(4)</code> would match a case of <code>p</code> in our switch statement:
+- 0 is the index of the room (it is the only room shown, but typically there would be multiple rooms), 8 is the index of the row, and the 4th character of the 8th row is a <code>p</code>.</p>
+<h3 id="the-room-rendering-function-abridged">The room-rendering function (abridged)</h3>
+<p>(To be called on collision.)</p>
+<pre tabindex="0"><code>function renderRoom(room){
+    for(var row in room){
+        for(var column=0; column &lt;=  room[row].length; column++){
+            switch (room[row].charAt(column)){
+                case 'p':
+                    platform = platforms.create(column*32, row*32, 'platform-image');
+                    break;
+            }
+        }
+    }
+}
+</code></pre><p>This room-rendering function currently only works with one level but should scale to accommodate multiple levels and work similarly if not identically.</p>
+<p>The room system works as detailed in pseudo-code below, with each &ldquo;column&rdquo; actually representing a single character in a string:</p>
+<pre tabindex="0"><code>level1 [
+	room1 [ 
+		row1 'column1 column2 column3',
+		row2 'column1 column2 column3',
+		row3 'column1 column2 column3'
+	],
+	room2 [ 
+		row1 'column1 column2 column3',
+		row2 'column1 column2 column3',
+		row3 'column1 column2 column3'
+	]
+]
+</code></pre></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
