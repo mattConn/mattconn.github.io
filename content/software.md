@@ -11,11 +11,11 @@ Build graphs and generate their images, adjacency matrices and JSON data with Fl
 
 ---
 
-## [Spelling Bee](http://mattconndev.com:8085/)  
+## [Spelling Bee](https://react-spelling-bee.web.app/)  
 ![](/images/spelling-bee.png)  
 A word-finding game like the NYT's spelling bee, made with React.
 
-[Play](http://mattconndev.com:8085/) | [Source Code](https://github.com/mattConn/spelling-bee)  
+[Play](https://react-spelling-bee.web.app/) | [Source Code](https://github.com/mattConn/spelling-bee)  
 
 ---
 
