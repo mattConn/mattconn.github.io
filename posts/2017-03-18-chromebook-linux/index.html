@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/x-mathjax-config">
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+    <title>Chromebook Linux - From Crouton to GalliumOS</title>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body><header id="banner">
+    <h2><a href="/">MattConnDev</a></h2>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/" title="">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about" title="">About</a>
+            </li>
+            
+            <li>
+                <a href="/software" title="">Software</a>
+            </li>
+            
+            <li>
+                <a href="/posts" title="">Posts</a>
+            </li>
+            
+            <li>
+                <a href="/resume" title="">Resume</a>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Chromebook Linux - From Crouton to GalliumOS</h1><time>March 18, 2017</time></header><p>I love my Chromebook (as evidenced in [this](http://{{ site.noita.domain }}/blog/2016/chromebook-web-development/) post); I bring it everywhere as it comes in handy for long commutes and, weighing in at around 3 pounds, isn&rsquo;t the least bit cumbersome.</p>
+<p>However, the restrictions ChromeOS placed on me had been noticeable since the beginning; and I knew I would be restricted to Chrome Apps, extensions, and Play store applications, but didn&rsquo;t count on how annoying this restriction would wind up being. Fortunately, there were workarounds.</p>
+<h2 id="crouton-an-early-solution">Crouton: An Early Solution</h2>
+<p><a href="https://github.com/dnschneid/crouton" target="_blank">Crouton</a> proved to be very easy to install and useful from the start. By creating a chroot and installing my distro of choice in it, I could run Ubuntu either by switching over to the chroot or accessing it from the Crosh command line.</p>
+<p>There was a problem, however; Ubuntu didn&rsquo;t have the greatest driver support for my Chromebook&rsquo;s trackpad and keyboard. So I found myself running Linux programs from the command line that ChromeOS typically wouldn&rsquo;t allow (such as PHP, Python, and naturally, apt-get), but actually working in the ChromeOS environment, as it was just that much more supportive of the machine (Samsung Chromebook 3).</p>
+<p>But now if I wanted to play a game in an emulator such as Mupen64plus or WINE, I could not run that from the command line while in ChromeOS; it would throw an error in regards to X-server, forcing me to switch over to the chroot just for one program.</p>
+<h2 id="galliumos-my-current-and-best-so-far-solution">GalliumOS: My Current (And Best, So Far) Solution</h2>
+<p>Finally I thought I would consider <a href="https://galliumos.org/" target="_blank">GalliumOS</a>; a distro made specifically for Chromebooks. I made a ChromeOS recovery image and made a GalliumOS bootable USB and gave it a try.</p>
+<p>It worked nicely; it was a complete Linux environment that supported my machine&rsquo;s brightness and volume keys, and with better &ldquo;palm detection&rdquo; (think Macbook trackpads and your resting thumb) out of the box without messing about with Synaptics.</p>
+<p>Initially, there was no sound support for my model. This stopped from installing it for a bit, but after trying a few other options, one including running a chroot off an SD card (for extra space for packages; it gets ejected when the machine sleeps unfortunately), I figured I&rsquo;d deal with the sound issue. (At the time, the bug was that no internal sound was supported, but Bluetooth sound was.)</p>
+<p>After a full install, made easy thanks to GalliumOS&rsquo;s excellent documentation, and then finally a GalliumOS update, to my surprise, internal audio worked, and so I&rsquo;m now using my Chromebook as I please, with the ability to install my favorite programs such as Visual Studio Code (a program I wanted on my Chromebook from the very start), WINE, and all the rest; with that update came the patch that fixed my model&rsquo;s sound issue.</p>
+<p>As I find myself installing and re-installing Linux pretty often, as with the example of setting up chroots mentioned earlier, I began tracking my environment&rsquo;s packages, as well as Visual Studio Code extensions, which you can check out in a repository <a href="https://github.com/mattConn/ubuntu-environment-setup" target="_blank">here</a>.</p></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
