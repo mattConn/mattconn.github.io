@@ -6,7 +6,7 @@ description: How I finally got to use my Chromebook as a full-featured Linux mac
 robots: none
 comments: true
 published: true
-draft: true
+draft: false 
 categories: ['linux']
 ---
 

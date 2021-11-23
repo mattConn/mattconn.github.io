@@ -4,7 +4,7 @@ date: 2017-01-02 08:39:58 -0400
 layout: post
 description: Enable in-line PHP parsing with Nginx; code snippets included.
 robots: none
-draft: true
+draft: false 
 comments: true
 published: true
 categories: ['web development']

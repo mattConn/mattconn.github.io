@@ -5,7 +5,7 @@ _Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
 
 I'm a Fall 2020 Computer Science graduate with a minor in Math from the CUNY College of Staten Island, looking for my next role as a developer.  
 
-Prior to returning to college, I worked as a Frontend Developer for The Charles NYC from 2016 to 2017, after having graduated with a BS in Communications in 2016, also from the College of Staten Island.
+Prior to returning to college, I worked as a Software Developer for The Charles NYC from 2016 to 2017, after having graduated with a BS in Communications in 2016, also from the College of Staten Island.
 
 My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go.
 

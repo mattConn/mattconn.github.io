@@ -5,7 +5,7 @@ title: "About Matthew Connelly"
 
 ## What I've Been Up To
 
-In 2017, I left my job as a Frontend Developer to pursue a BS in Computer Science and a minor in Mathematics, having come from a background in design with a BS in Communications.
+In 2017, I left my job as a Software Developer to pursue a BS in Computer Science and a minor in Mathematics, having come from a background in design with a BS in Communications.
 
 Prior to this, I had begun working lower on the stack and had come to the realization that there was a lot that I wanted to understand about Software Development and computers overall. Feeling the time was right, I decided a full dive into Computer Science was necessary at the undergraduate level.
 

@@ -1,7 +1,7 @@
 ---
 title: "Deleting Python Array Elements In-Place"
 date: 2020-09-23T02:59:12-04:00
-draft: true 
+draft: false 
 ---
 
 ![](/images/python.png)

@@ -9,11 +9,14 @@ theme = "etch"
   name = ""
 
 SectionPagesMenu = "main"
-
+      
 # Configure syntax highlight
 [markup]
   [markup.highlight]
     style = "rrt" # dark themes: monokai, api, fruity, native, rrt, swapoff
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [[menu.main]]
   name = "Home"

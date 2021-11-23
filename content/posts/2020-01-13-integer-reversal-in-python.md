@@ -1,7 +1,7 @@
 ---
 title: "Integer Reversal in Python"
 date: 2020-06-28T20:39:40-04:00
-draft: true
+draft: false 
 categories: ['mathematics','python']
 ---
 
