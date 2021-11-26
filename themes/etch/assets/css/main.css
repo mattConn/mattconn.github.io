@@ -17,6 +17,10 @@ body {
     line-height: 1.6;
 }
 
+img {
+    border: solid 1px #313a3d;
+}
+
 header#banner {
     margin: 25px 0;
 }

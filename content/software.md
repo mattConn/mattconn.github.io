@@ -2,6 +2,16 @@
 title: "Software"
 ---
 
+## [Coinpicker](https://coinpicker.herokuapp.com/)
+![](/images/coinpicker.png)  
+### Made with: JavaScript, React 
+
+Compare the buy and sell prices of Ethereum and Bitcoin by the second with recommended purchase.
+  
+[Try It Out](https://coinpicker.herokuapp.com/) | [Source Code](https://github.com/mattConn/coinpicker)  
+
+---
+
 ## [WASM Snake](http://mattconndev.com/snake-wasm)  
 ![](/images/snake.png)  
 ### Made with: C++, WASM 
