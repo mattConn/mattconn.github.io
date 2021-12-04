@@ -2,13 +2,13 @@
 title: "Work"
 ---
 
-## [Coinpicker](https://coinpicker.herokuapp.com/)
+## [Coinpicker](https://coinpicker.pages.dev/)
 ![](/images/coinpicker.png)  
 ### Made with: JavaScript, React 
 
 Compare the buy and sell prices of Ethereum and Bitcoin by the second with recommended purchase.
   
-[Try It Out](https://coinpicker.herokuapp.com/) | [Source Code](https://github.com/mattConn/coinpicker)  
+[Try It Out](https://coinpicker.pages.dev/) | [Source Code](https://github.com/mattConn/coinpicker)  
 
 ---
 
