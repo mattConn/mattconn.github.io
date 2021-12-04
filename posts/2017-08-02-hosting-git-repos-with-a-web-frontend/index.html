@@ -1,0 +1,74 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=/favicon.ico>
+<link rel=stylesheet href=/css/style.min.css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=text/x-mathjax-config>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+<title>Hosting Git Repos With a Web Frontend</title>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</head>
+<body><header id=banner>
+<h2><a href=/>MattConnDev</a></h2>
+<nav>
+<ul>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/about title>About</a>
+</li>
+<li>
+<a href=/software title>Software</a>
+</li>
+<li>
+<a href=/posts title>Posts</a>
+</li>
+<li>
+<a href=/resume title>Resume</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=content>
+<article>
+<header id=post-header>
+<h1>Hosting Git Repos With a Web Frontend</h1><time>August 2, 2017</time></header><p>Hosting your git repositories yourself is as simple as <code>git init --bare</code> (or <code>git clone --bare</code> for existing repos) in a directory on your server, and then adding the remote to your local repo: <code>git remote add myServer ssh://me@server.address/path/to/repo/project.git</code>.</p>
+<p>Having your repos on GitHub too makes for a nice redundancy (or on any other git server), and a remote on your server, on GitHub and a local copy makes for three redundancies. You can push to multiple remotes by adding a few lines in your project&rsquo;s git config.</p>
+<p>In your local copy of the repo, edit <code>.git/config</code> and add a new block:</p>
+<pre><code>[remote &quot;all&quot;]
+    url = ssh://me@server.address/path/to/repo/project.git
+    url = git@github.com:me/project
+</code></pre>
+<p>That would be the url for your server and for GitHub&rsquo;s. And so now when you&rsquo;re ready to push, <code>git push all &lt;branch_name></code> will push your changes to both repositories. It should be noted that you can name this remote whatever you want.</p>
+<h2 id=installing-gitlist-for-a-git-web-interface-and-troubleshooting>Installing GitList for a Git Web Interface (and Troubleshooting)</h2>
+<h4 id=using-nginx-server-on-debian-9>(Using Nginx server on Debian 9)</h4>
+<p>For a nice way to show your code and commits much like GitHub does, there are many <a href=https://git.wiki.kernel.org/index.php/Interfaces,_frontends,_and_tools#Web_Interfaces target=_blank>git web interfaces</a> out there, but I chose <a href=http://gitlist.org/ target=_blank>GitList</a> because it looked pretty good and seemed pretty easy to set up.</p>
+<p>I used Nginx for my server, so I followed GitList&rsquo;s <code>INSTALL.md</code> instructions for Nginx, copying their provided configuration.<br>
+Here are some issues I encountered and their solutions:</p>
+<h2 id=getting-a-500-error-when-trying-to-view-repos>Getting a 500 error when trying to view repos:</h2>
+<p>Assuming you’re using php-fpm, you’ll need to note the address in GitList’s Nginx config, within the php location block, listed as <code>fastcgi_pass</code>:</p>
+<pre><code>location ~ ^/index.php.$ {
+    fastcgi_pass 127.0.0.1:9000;
+}
+</code></pre>
+<p>Then open <code>/etc/php/7.0/fpm/pool.d/www.conf</code> and find the line <code>listen = /run/php/php7.0-fpm.sock</code>; here you’re going to change the listed socket to the address in our Nginx location block above so that it reads as: <code>listen = 127.0.0.1:9000</code>.</p>
+<p>After restarting php-fpm, you should no longer receive a 500 error when viewing repos.</p>
+<h2 id=getting-blank-screen-500-error-when-trying-to-view-commits>Getting blank screen (500 error) when trying to view commits:</h2>
+<p>This error persisted for a bit longer than the above for me, but looking at the error log (always check the error log!), I noticed this:</p>
+<pre><code>FastCGI sent in stderr: “PHP message: PHP Fatal error:  Uncaught Error: Class ‘SimpleXmlIterator’ not found in /var/www/gitlist/vendor/klaussilveira/gitter/lib/Gitter/PrettyFormat.php:22
+</code></pre>
+<p>Searching for <code>‘SimpleXmlIterator’ not found</code> online lead me to find that I needed to install <code>php7.0-xml</code>, which I was able to do with apt-get, which solved the issue.</p></article>
+</main><footer id=footer>
+</footer>
+</body>
+</html>

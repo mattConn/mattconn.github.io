@@ -1,0 +1,93 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=/favicon.ico>
+<link rel=stylesheet href=/css/style.min.css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=text/x-mathjax-config>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+<title>Integer Reversal in Python</title>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</head>
+<body><header id=banner>
+<h2><a href=/>MattConnDev</a></h2>
+<nav>
+<ul>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/about title>About</a>
+</li>
+<li>
+<a href=/software title>Software</a>
+</li>
+<li>
+<a href=/posts title>Posts</a>
+</li>
+<li>
+<a href=/resume title>Resume</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=content>
+<article>
+<header id=post-header>
+<h1>Integer Reversal in Python</h1><time>June 28, 2020</time></header><p>I’m doing Project Euler right now and problem 4 asks you to find a palindromic number. A palindrome is a word (or a number) or phrase that when reversed, remains the same.
+So some integer n is a palindromic number when n = reverse(n). I wrote a palindrome checking function relying on stringification and lists:</p>
+<pre tabindex=0><code># palindrome checker
+def isPalindrome(n):
+	# reverse n
+	r = list(str(n)) # list from string
+	r.reverse()
+	r = r''.join(r) # cast back to string
+	
+	if str(n) == r: # compare strings
+		return true
+
+	return false
+</code></pre><p>Feels silly but it gets the job done. It’s not lost on me that this is a big waste of storage and that string comparison when integers are already available is unnecessary.</p>
+<h1 id=a-nicer-numerical-way-to-reverse-an-integer>A Nicer Numerical Way To Reverse An Integer</h1>
+<p>A little bit of arithmetic will work and should be more efficient.</p>
+<pre tabindex=0><code># reverse integer
+def reverseInt(n):
+	magnitude = int(math.log(n.10))
+
+	result = 0
+
+	while magnitude &gt;= 0:
+		result += (n % 10) * 10**magnitude
+		magnitude -= 1
+		n //= 10
+
+	return result
+</code></pre><p>The gory details below:</p>
+<pre tabindex=0><code>	magnitude = int(math.log(n.10))
+</code></pre><p>Log base 10 will give you the length (minus 1) of the integer, or the magnitude. I truncate this float by casting to an integer.</p>
+<pre tabindex=0><code>		result += (n % 10) * 10**magnitude
+		magnitude -= 1
+</code></pre><p>I get the last digit of the integer by mod 10. For example, 123 / 10 = 12.3. The remainder is the last digit. Multiply this digit by the magnitude and then decrement the magnitude for the next digit. The result will look like, using 123 as an example: 300, then 300 + 20, then 300 + 20 + 1 (or 321).</p>
+<pre tabindex=0><code>n //= 10
+</code></pre><p>Lastly, integer division (which is not the default in python 3) by 10 will shift the integer right and truncate.</p>
+<h1 id=the-new-palindrome-checker>The New Palindrome Checker</h1>
+<pre tabindex=0><code># palindrome checker
+def isPalindrome(n):
+	if reverseInt(n) == n:
+		return True
+	
+	return False
+</code></pre><p>Looks better!</p>
+</article>
+</main><footer id=footer>
+</footer>
+</body>
+</html>

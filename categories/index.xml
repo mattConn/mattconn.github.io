@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on MattConnDev</title><link>/categories/</link><description>Recent content in Categories on MattConnDev</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sun, 28 Jun 2020 20:39:40 -0400</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Counting All Subgraphs in a Complete Graph with Adjacency Matrices</title><link>/posts/2021-01-20-counting-all-subgraphs-in-complete-graph/</link><pubDate>Wed, 20 Jan 2021 20:36:18 -0400</pubDate><guid>/posts/2021-01-20-counting-all-subgraphs-in-complete-graph/</guid><description>Complete graph \(k_6\)
+A complete graph \(k_n\) can be represented by a \(n \times n\) symmetric adjaceny matrix.
+\begin{equation*} k_n = \begin{pmatrix} 0 &amp;amp; e_1 &amp;amp; e_2 &amp;amp; &amp;hellip; &amp;amp; e_n \\ e_1 &amp;amp; 0 &amp;amp; &amp;amp; &amp;amp; \\ e_2 &amp;amp; &amp;amp; 0 &amp;amp; &amp;amp; \\ \vdots &amp;amp; &amp;amp; &amp;amp; \ddots &amp;amp; \\ e_n &amp;amp; &amp;amp; &amp;amp; &amp;amp; 0 \end{pmatrix} \end{equation*}
+The upper (or lower) triangle will have \(\frac{{n(n-1)}}{2}\) components. Flatten this triangle into a bit string, and then there are \(2^{ \frac{{n(n-1)}}{2} }\) spanning subgraphs.</description></item><item><title>Deleting Python Array Elements In-Place</title><link>/posts/2020-09-23-python-deleting-in-place/</link><pubDate>Wed, 23 Sep 2020 02:59:12 -0400</pubDate><guid>/posts/2020-09-23-python-deleting-in-place/</guid><description>Some notes on learning Python.
+I want to delete certain Python elements &amp;ldquo;in-place&amp;rdquo;; no copies. To start, I will try to delete every element in the array:
+# An array of integers 0 through 9. array = [*range(10)] The approach below will not work:
+for i in array: del i del is like pop, minus the return of the removed element. This will only delete the iterator copied locally to the scope of the loop.</description></item><item><title>Compiling an SDL2 Game to WASM</title><link>/posts/2020-07-13-sdl2-game-to-wasm/</link><pubDate>Mon, 13 Jul 2020 02:59:12 -0400</pubDate><guid>/posts/2020-07-13-sdl2-game-to-wasm/</guid><description>I have a Snake clone written in C++ and SDL2, and while it&amp;rsquo;s not just-add-water (yet) to compile a game to WASM with emscripten, it&amp;rsquo;s pretty close. There was just some minor refactoring to be done, but it didn&amp;rsquo;t affect the desktop version.
+Infinite loop error My game loop spins forever or until a quit event occurs. Infinite loops don&amp;rsquo;t fly in the browser however, and this is the biggest change that had to be made to my game.</description></item><item><title>Comparing Array-Based Stacks in C and Go</title><link>/posts/2020-07-05-array-based-stacks/</link><pubDate>Sun, 05 Jul 2020 20:36:18 -0400</pubDate><guid>/posts/2020-07-05-array-based-stacks/</guid><description>I&amp;rsquo;ll be comparing stack-based arrays in C and Go. There are many ways to implement a stack, but the aim here is for simplicity.
+Stacks in C Non-Functionial Approach Filling a stack with integers 1 through 10.
+#include &amp;lt;stdio.h&amp;gt; int main() { int stack[10]; int top = -1; int i = 1; while(top+1 &amp;lt; 10) { stack[++top] = i; i++; } // print for(int i=0; i &amp;lt; 10; i++) printf(&amp;quot;STACK[%d]=%d\n&amp;quot;,i,stack[i]); return 0; } In need of a stack, this will do.</description></item><item><title>Integer Reversal in Python</title><link>/posts/2020-01-13-integer-reversal-in-python/</link><pubDate>Sun, 28 Jun 2020 20:39:40 -0400</pubDate><guid>/posts/2020-01-13-integer-reversal-in-python/</guid><description>I’m doing Project Euler right now and problem 4 asks you to find a palindromic number. A palindrome is a word (or a number) or phrase that when reversed, remains the same. So some integer n is a palindromic number when n = reverse(n). I wrote a palindrome checking function relying on stringification and lists:
+# palindrome checker def isPalindrome(n): # reverse n r = list(str(n)) # list from string r.</description></item><item><title>Extra Steps Needed for Setting Up Octopress with GitHub Pages</title><link>/posts/2018-04-20-extra-steps-needed-for-setting-up-octopress-github-pages/</link><pubDate>Fri, 20 Apr 2018 00:51:16 -0400</pubDate><guid>/posts/2018-04-20-extra-steps-needed-for-setting-up-octopress-github-pages/</guid><description>&lt;p>Having to set up Octopress to use with GitHub pages again, I realized there are a few extra steps I needed to perform that weren&amp;rsquo;t in the &lt;a href="http://octopress.org/docs/">default instructions&lt;/a> on the octopress website.&lt;/p></description></item><item><title>Hosting Git Repos With a Web Frontend</title><link>/posts/2017-08-02-hosting-git-repos-with-a-web-frontend/</link><pubDate>Wed, 02 Aug 2017 00:21:17 -0400</pubDate><guid>/posts/2017-08-02-hosting-git-repos-with-a-web-frontend/</guid><description>&lt;p>Hosting your git repositories yourself is as simple as &lt;code>git init --bare&lt;/code> (or &lt;code>git clone --bare&lt;/code> for existing repos) in a directory on your server, and then adding the remote to your local repo: &lt;code>git remote add myServer ssh://me@server.address/path/to/repo/project.git&lt;/code>.&lt;/p>
+&lt;p>Having your repos on GitHub too makes for a nice redundancy (or on any other git server), and a remote on your server, on GitHub and a local copy makes for three redundancies. You can push to multiple remotes by adding a few lines in your project&amp;rsquo;s git config.&lt;/p></description></item><item><title>Text-based Level Editing and Phaser JS</title><link>/posts/2017-04-07-text-based-level-editing-phaser-js/</link><pubDate>Fri, 07 Apr 2017 08:39:58 -0400</pubDate><guid>/posts/2017-04-07-text-based-level-editing-phaser-js/</guid><description>&lt;p>If you are familiar with roguelikes (turn-based dungeon crawlers) such as Nethack, then you are no doubt familiar with the idea of a game&amp;rsquo;s elements being displayed entirely as ASCII characters.&lt;/p>
+&lt;p>Here I will explain how I use a similar approach to create the layout of rooms in a game I am working on and how I use Phaser (JS game engine) to render the rooms based on my layouts.&lt;/p></description></item><item><title>Chromebook Linux - From Crouton to GalliumOS</title><link>/posts/2017-03-18-chromebook-linux/</link><pubDate>Sat, 18 Mar 2017 08:39:58 -0400</pubDate><guid>/posts/2017-03-18-chromebook-linux/</guid><description>&lt;p>I love my Chromebook (as evidenced in [this](http://{{ site.noita.domain }}/blog/2016/chromebook-web-development/) post); I bring it everywhere as it comes in handy for long commutes and, weighing in at around 3 pounds, isn&amp;rsquo;t the least bit cumbersome.&lt;/p>
+&lt;p>However, the restrictions ChromeOS placed on me had been noticeable since the beginning; and I knew I would be restricted to Chrome Apps, extensions, and Play store applications, but didn&amp;rsquo;t count on how annoying this restriction would wind up being. Fortunately, there were workarounds.&lt;/p></description></item><item><title>Parsing In-line PHP With Nginx</title><link>/posts/2017-01-02-nginx-php-parsing-in-html/</link><pubDate>Mon, 02 Jan 2017 08:39:58 -0400</pubDate><guid>/posts/2017-01-02-nginx-php-parsing-in-html/</guid><description>&lt;h3 id="my-environment">My Environment&lt;/h3>
+&lt;ul>
+&lt;li>Nginx version
+&lt;ul>
+&lt;li>1.10.0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PHP version
+&lt;ul>
+&lt;li>7.0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>FastCGI processor
+&lt;ul>
+&lt;li>php7.0-fpm&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Kernel
+&lt;ul>
+&lt;li>Ubuntu 16.04&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-first-and-more-obvious-step">The First And More Obvious Step&lt;/h2>
+&lt;p>To enable parsing of PHP in HTML files, editing a server block&amp;rsquo;s location block to include files with an HTML extension should be sufficient.&lt;/p></description></item><item><title>Chromebook Web Development</title><link>/posts/2016-12-17-chromebook-web-development/</link><pubDate>Sat, 17 Dec 2016 08:39:58 -0400</pubDate><guid>/posts/2016-12-17-chromebook-web-development/</guid><description>&lt;h2 id="quick-rundown">Quick Rundown&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Machine:&lt;/strong>
+&lt;ul>
+&lt;li>Samsung Chromebook 3&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Environment:&lt;/strong>
+&lt;ul>
+&lt;li>ChromeOS for a GUI and native drivers&lt;/li>
+&lt;li>Lubuntu for server-side programs and scripts (treated as headless)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Text Editor/IDE&lt;/strong>
+&lt;ul>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/caret-t/agiednhnlghobdgpgfdnbdaflnngmoij?hl=en" target="_blank">Caret-T&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>I recently purchased a Samsung Chromebook 3 so I could work on projects during my long commute or at my local coffee shop without worrying about losing or breaking my other more expensive portable machine. It&amp;rsquo;s really nice and light, and with a little configuration, makes for a great portable web development environemnt. After all, ChromeOS is itself a linux distro, but things are a little hidden in this environment as ChromeOS is meant to be easily accessible and to leave the user as little room as possible to screw things up.&lt;/p></description></item><item><title>Quick and Custom AddThis Setup</title><link>/posts/2016-08-28-custom-addthis-setup/</link><pubDate>Sun, 28 Aug 2016 08:39:58 -0400</pubDate><guid>/posts/2016-08-28-custom-addthis-setup/</guid><description>&lt;p>Getting AddThis sharing set up exactly how I wanted took some digging the first time around. Maybe, like me, you wanted AddThis&amp;rsquo;s functionality but with your own styles, and not the AddThis brand buttons. Here&amp;rsquo;s how I set it up, allowing for full customization.&lt;/p></description></item><item><title>Animating with GreenSock</title><link>/posts/2016-05-12-animating-with-greensock/</link><pubDate>Thu, 12 May 2016 08:39:58 -0400</pubDate><guid>/posts/2016-05-12-animating-with-greensock/</guid><description>&lt;p>&lt;i>Originally written for &lt;a href="https://thecharlesnyc.com/unordered-list/green-sock" target="_blank">The Charles NYC&lt;/a>.&lt;/i>&lt;/p>
+&lt;p>I&amp;rsquo;ve recently been introduced to animating with the powerful JavaScript library GreenSock. It’s quite impressive, notably for how manageable its animations are. Unlike CSS3, which measures its animations with percentages, GreenSock uses seconds for timing. GreenSock is also capable of applying multiple animations to a single element, each running either consecutively or simultaneously, which is something CSS3 is not capable of either.&lt;/p></description></item></channel></rss>

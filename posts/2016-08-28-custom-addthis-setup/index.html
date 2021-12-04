@@ -1,0 +1,90 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=/favicon.ico>
+<link rel=stylesheet href=/css/style.min.css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=text/x-mathjax-config>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+<title>Quick and Custom AddThis Setup</title>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</head>
+<body><header id=banner>
+<h2><a href=/>MattConnDev</a></h2>
+<nav>
+<ul>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/about title>About</a>
+</li>
+<li>
+<a href=/software title>Software</a>
+</li>
+<li>
+<a href=/posts title>Posts</a>
+</li>
+<li>
+<a href=/resume title>Resume</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=content>
+<article>
+<header id=post-header>
+<h1>Quick and Custom AddThis Setup</h1><time>August 28, 2016</time></header><p>Getting AddThis sharing set up exactly how I wanted took some digging the first time around. Maybe, like me, you wanted AddThis&rsquo;s functionality but with your own styles, and not the AddThis brand buttons. Here&rsquo;s how I set it up, allowing for full customization.</p>
+<h2 id=considerations>Considerations</h2>
+<p>Before going further, here&rsquo;s a short list of things to consider before working with AddThis:</p>
+<p>You should have included AddThis&rsquo;s script before your document&rsquo;s closing body tag.
+AddThis&rsquo;s script will only work remotely; host locally or on a server.
+AddThis links will not work when certain adblock browser extensions are enabled; I&rsquo;ve found adblock plus gave me no problems, but ublock origin did.</p>
+<h2 id=the-code-and-setup>The Code And Setup</h2>
+<h3 id=the-html>The HTML:</h3>
+<pre tabindex=0><code>&lt;a class=&quot;sharing addthis_button_mailto&quot;&gt;mailto&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_email&quot;&gt;email&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_tumblr&quot;&gt;tumblr&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_google&quot;&gt;google&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_twitter&quot;&gt;twitter&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_facebook&quot;&gt;facebook&lt;/a&gt;
+&lt;a class=&quot;sharing addthis_button_linkedin&quot;&gt;linkedin&lt;/a&gt;
+</code></pre><p>For the HTML, we use anchors each with a class that the AddThis scripts and stylesheets recognize, such as &ldquo;addthis_button_facebook&rdquo;. Sharing will be fully functional when clicking on an anchor with this class for the corresponding platform. Meaning, these classes are required, or at least in this setup.</p>
+<p>The first class of &ldquo;sharing&rdquo; is a custom one that I use to denote that these anchors are for AddThis functionality, and to be styled as such. The JavaScript will point to the &ldquo;sharing&rdquo; class as well, but these are not required.</p>
+<p>When you first create these anchors with the &ldquo;addthis_button_socialplatform&rdquo; class, AddThis will create a span as well that will contain a small image; I simply style that span with a &ldquo;display: none&rdquo;, and carry on with my own styles.</p>
+<h3 id=the-javascript>The JavaScript:</h3>
+<pre tabindex=0><code>var share = document.getElementsByClassName('sharing');
+for(var i=0; i&lt;share.length; i++){
+    share[i].setAttribute('addthis:url',document.URL);
+    share[i].setAttribute('addthis:title',document.title);
+    share[i].setAttribute('addthis:description','Check out my cool post!');
+}
+</code></pre><p>For the JavaScript, we simply set the attributes of our AddThis anchors (all with the class of &ldquo;sharing&rdquo;) so that when sharing content, they automatically populate any text fields with the appropriate content. There&rsquo;s no need to set an href, as the AddThis script will automatically set it equal to #.</p>
+<p>The AddThis anchor attributes are the following:</p>
+<p>addthis:url - field will be populated with this url. In this case, I set it equal to our document&rsquo;s url, as I want the shared content to link back to my post or page. Of course, this url can be whatever you want.
+addthis:title - The title that will appear before the description in your shared content.
+addthis:description - this will be the copy that appears below the title in your shared content. This really only applies to platforms like Facebook and LinkedIn that allow for more copy when sharing. There won&rsquo;t be any bugs when this attributed is applied to an anchor where not applicable (such as twitter); the description simply will not appear in that platform&rsquo;s shared content, so there&rsquo;s no need to worry about that.
+How you set any of these attributes is entirely up to you; I use JavaScript because I thought it was the easiest solution and I like JavaScript, but of course you could do it manually. Where you get your &ldquo;addthis:description&rdquo; is up to you as well; maybe an especially important paragraph&rsquo;s innerHTML?</p>
+<h3 id=considerations-for-facebook-and-email>Considerations For Facebook And Email</h3>
+<p>Email (not mailto, but AddThis&rsquo;s email sharing) and Facebook sharing stand out amongst all the other platforms here in that they both require a little extra.</p>
+<p>If you change the content you want to share to Facebook and it isn&rsquo;t updating, you&rsquo;ll want to paste the url of the page you&rsquo;re sharing into Facebook&rsquo;s sharing debugger.
+While mailto will open your device&rsquo;s default mail client, then populate the subject based on the mailto attributes, &ldquo;addthis_button_email&rdquo; populates its fields based on the AddThis config variable (seen below).</p>
+<pre tabindex=0><code>var addthis_config = addthis_config||{};
+addthis_config.ui_email_to = 'recipient@email.com';
+addthis_config.ui_email_from = 'sender@email.com';
+addthis_config.ui_email_note = 'The copy that makes up the body of the email.';
+</code></pre><p>Only one of these will work per page. Also, in case you&rsquo;re familiar with the old AddThis email modal, I feel I should warn you that they&rsquo;ve done away with that and instead AddThis email opens a new window.</p>
+<p>Alternatively, you could create an email template in your AddThis dashboard. I&rsquo;ll admit AddThis has good documentation for this.</p>
+<p>Finally, you may want to &ldquo;display: none&rdquo; on &ldquo;#at-cv-lightbox&rdquo;; this modal can popup after first visit to a page using AddThis.</p></article>
+</main><footer id=footer>
+</footer>
+</body>
+</html>

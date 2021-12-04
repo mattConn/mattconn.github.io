@@ -1,0 +1,125 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=/favicon.ico>
+<link rel=stylesheet href=/css/style.min.css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=text/x-mathjax-config>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  }
+</script>
+<title>Deleting Python Array Elements In-Place</title>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</head>
+<body><header id=banner>
+<h2><a href=/>MattConnDev</a></h2>
+<nav>
+<ul>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/about title>About</a>
+</li>
+<li>
+<a href=/software title>Software</a>
+</li>
+<li>
+<a href=/posts title>Posts</a>
+</li>
+<li>
+<a href=/resume title>Resume</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=content>
+<article>
+<header id=post-header>
+<h1>Deleting Python Array Elements In-Place</h1><time>September 23, 2020</time></header><p><img src=/images/python.png alt></p>
+<p><em>Some notes on learning Python.</em></p>
+<p>I want to delete certain Python elements &ldquo;in-place&rdquo;; no copies. To start, I will try to delete every element in the array:</p>
+<pre tabindex=0><code># An array of integers 0 through 9.
+array = [*range(10)]
+</code></pre><p>The approach below will not work:</p>
+<pre tabindex=0><code>for i in array:
+    del i
+</code></pre><p>del is like pop, minus the return of the removed element. This will only delete the iterator copied locally to the scope of the loop.</p>
+<p>Trying a more old-school loop with indices:</p>
+<pre tabindex=0><code>for i in range(len(array)):
+    del array[i]
+</code></pre><p>This throws an <code>IndexError: list assignment out of range</code>. Some investigation through printing:</p>
+<pre tabindex=0><code>for i in range(len(array)):
+    print(i,'before del:',array)
+    del array[i]
+    print(i,'after del:',array,'\n')
+</code></pre><p>Gives the following output:</p>
+<pre tabindex=0><code>0 before del: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+0 after del: [1, 2, 3, 4, 5, 6, 7, 8, 9] 
+
+1 before del: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+1 after del: [1, 3, 4, 5, 6, 7, 8, 9] 
+
+2 before del: [1, 3, 4, 5, 6, 7, 8, 9]
+2 after del: [1, 3, 5, 6, 7, 8, 9] 
+
+3 before del: [1, 3, 5, 6, 7, 8, 9]
+3 after del: [1, 3, 5, 7, 8, 9] 
+
+4 before del: [1, 3, 5, 7, 8, 9]
+4 after del: [1, 3, 5, 7, 9] 
+
+5 before del: [1, 3, 5, 7, 9]
+</code></pre><p>And then finally comes to a halt and throws the same <code>IndexError</code>.</p>
+<p>It now becomes clear&mldr; the last line printed shows what went wrong, and just how exactly we&rsquo;re out of range with index 5 in an array 5 elements long.</p>
+<h1 id=removing-based-on-certain-conditions>Removing Based On Certain Conditions</h1>
+<p>Now I want to remove only odd numbers from my array:</p>
+<pre tabindex=0><code>for i in range(len(array)):
+    if array[i] % 2 != 0:
+        del array[i]
+</code></pre><p>Again, <code>IndexError</code>. Maybe some investigative printing would help&mldr;</p>
+<pre tabindex=0><code>for i in range(len(array)):
+    print(i,'before del:',array)
+    
+    if array[i] % 2 != 0:
+        del array[i]
+        
+    print(i,'after del:',array,'\n')
+</code></pre><p>Well, this doesn&rsquo;t even get to run. Unlike earlier, we don&rsquo;t even get to see on which iteration of the loop this fails; it throws an error right out of the gate.</p>
+<p>This error points to our if statement, but if we replace the del with some other expression, this code will run fine:</p>
+<pre tabindex=0><code>for i in range(len(array)):    
+    if array[i] % 2 != 0:
+        print(array[i])
+</code></pre><p>The above will print all odd numbers in the array. The issue must then lie in the del operation? It almost feels like its being &ldquo;hoisted&rdquo;, in javascript parlance&mldr;.</p>
+<h1 id=managing-the-array-yourself>Managing The Array Yourself</h1>
+<p>If you want something done right, you do it yourself! From a C and C++ perspective, this would be the only way to do most things. With a dynamic language like Python, this feels odd. But it works and there is no mystery:</p>
+<pre tabindex=0><code>length = len(array)
+i = 0
+while i &lt; length:
+    if array[i] % 2 != 0:
+        del array[i]
+        length -=1 
+    i+=1
+</code></pre><p>This is a bit more to type, and uses two variables that are useless beyond the scope of this operation (a waste). But when can cut that down to one variable; we don&rsquo;t have to store length:</p>
+<pre tabindex=0><code>i = 0
+while i &lt; len(array):
+    if array[i] % 2 != 0:
+        del array[i]
+    i+=1
+</code></pre><p>The length of the array updates as elements are deleted, and <code>len</code> returns the new length every time, so we only need to manage where we are in the array.</p>
+<h1 id=the-easiest-way>The Easiest Way</h1>
+<pre tabindex=0><code>for i in array:
+    if i % 2 != 0:
+        array.remove(i)
+</code></pre><p>The remove method! This will do it. Not pop, but remove.</p>
+</article>
+</main><footer id=footer>
+</footer>
+</body>
+</html>
