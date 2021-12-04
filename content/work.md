@@ -1,0 +1,34 @@
+---
+title: "Work"
+---
+
+## [Coinpicker](https://coinpicker.herokuapp.com/)
+![](/images/coinpicker.png)  
+### Made with: JavaScript, React 
+
+Compare the buy and sell prices of Ethereum and Bitcoin by the second with recommended purchase.
+  
+[Try It Out](https://coinpicker.herokuapp.com/) | [Source Code](https://github.com/mattConn/coinpicker)  
+
+---
+
+## [WASM Snake](https://mattconn.itch.io/snake-wasm)  
+![](/images/snake.png)  
+### Made with: C++, WASM 
+
+The classic snake game, ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
+  
+
+[Play](https://mattconn.itch.io/snake-wasm) | [Source Code](https://github.com/mattConn/snake-game)  
+
+---
+
+## [Spelling Bee](https://react-spelling-bee.web.app/)  
+![](/images/spelling-bee.png)  
+### Made with: JavaScript, React
+
+A word-finding game like the NYT's spelling bee.
+
+[Play](https://react-spelling-bee.web.app/) | [Source Code](https://github.com/mattConn/spelling-bee)  
+
+---

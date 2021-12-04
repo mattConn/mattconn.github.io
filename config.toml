@@ -31,10 +31,10 @@ SectionPagesMenu = "main"
   url = "/about"
 
 [[menu.main]]
-  name = "Software"
+  name = "Work"
   weight = 3
-  identifier = "software"
-  url = "/software"
+  identifier = "Work"
+  url = "/work"
 
 [[menu.main]]
   name = "Posts"
