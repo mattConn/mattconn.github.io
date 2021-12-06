@@ -1,4 +1,4 @@
-baseurl = "http://mattconndev.com"
+baseurl = "https://mattconn.dev"
 title = "MattConnDev"
 canonifyurls = true
 languageCode = "en-US"
