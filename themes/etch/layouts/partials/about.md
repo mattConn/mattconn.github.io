@@ -15,4 +15,4 @@ You can contact me at matthew.b.connelly at gmail.
 [Twitter](https://twitter.com/mattconndev)  
 [LinkedIn](https://www.linkedin.com/in/mattconndev/)  
 
-This website was generated with Hugo. [Source](https://github.com/mattConn/mattconndev)
+This website was generated with Hugo. [Source](https://github.com/mattConn/mattconn.github.io)
