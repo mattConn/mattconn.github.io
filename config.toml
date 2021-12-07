@@ -1,5 +1,5 @@
 baseurl = "https://mattconn.github.io"
-title = "MattConnDev"
+title = "MattConn"
 canonifyurls = true
 languageCode = "en-US"
 paginate = 5
