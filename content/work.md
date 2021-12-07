@@ -3,7 +3,10 @@ title: "Work"
 ---
 
 ## [Coinpicker](https://coinpicker.pages.dev/)
-![](/images/coinpicker.png)  
+<a href = "https://coinpicker.pages.dev/" target="_blank">
+<img src="/images/coinpicker.png" />
+</a>
+
 ### Made with: JavaScript, React 
 
 Compare the buy and sell prices of Ethereum and Bitcoin by the second with recommended purchase.
@@ -13,7 +16,11 @@ Compare the buy and sell prices of Ethereum and Bitcoin by the second with recom
 ---
 
 ## [Spelling Bee](https://spelling-bee.pages.dev/)  
-![](/images/spelling-bee.png)  
+
+<a href = "https://spelling-bee.pages.dev/" target="_blank">
+<img src="/images/spelling-bee.png" />
+</a>
+
 ### Made with: JavaScript, React
 
 A word-finding game like the NYT's spelling bee.
@@ -23,7 +30,11 @@ A word-finding game like the NYT's spelling bee.
 ---
 
 ## [WASM Snake](https://mattconn.itch.io/snake-wasm)  
-![](/images/snake.png)  
+
+<a href = "https://mattconn.itch.io/snake-wasm" target="_blank">
+<img src="/images/snake.png" />
+</a>
+
 ### Made with: C++, WASM 
 
 The classic snake game, ported to WASM for in-browser play. [Read about how it was ported](/posts/2020-07-13-sdl2-game-to-wasm/).
