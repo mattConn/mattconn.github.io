@@ -43,3 +43,18 @@ The classic snake game, ported to WASM for in-browser play. [Read about how it w
 [Play](https://mattconn.itch.io/snake-wasm) | [Source Code](https://github.com/mattConn/snake-game)  
 
 ---
+
+## [Charlie Zine](http://helloitscharlie.com/tldr)  
+
+<a href = "http://helloitscharlie.com/tldr" target="_blank">
+<img src="/images/charlie.png" />
+</a>
+
+### Made with: GreenSock, Scrollmagic, JavaScript 
+
+An interactive responsive single-page article made for The Charles NYC.
+  
+
+[Check It Out](http://helloitscharlie.com/tldr) 
+
+---
