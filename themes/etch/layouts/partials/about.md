@@ -3,7 +3,7 @@
 ![](/images/me.png)  
 _Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
 
-I'm a UX Engineer at [Harbour](https://harbourshare.com/) who describes himself as a creative developer with a background in Computer Science.   
+Hello! I'm a UX Engineer at [Harbour](https://harbourshare.com/) who describes himself as a creative developer with a background in Computer Science.   
 
 My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go.
 
