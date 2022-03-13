@@ -1,94 +1,14 @@
-<!doctype html><html><head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href=https://mattconn.github.io/favicon.ico>
-<link rel=stylesheet href=https://mattconn.github.io/css/style.min.css>
-<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css>
-<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
-<script>hljs.initHighlightingOnLoad()</script>
-<script type=text/x-mathjax-config>
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://mattconn.github.io/favicon.ico><link rel=stylesheet href=https://mattconn.github.io/css/style.min.css><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script><script type=text/x-mathjax-config>
   MathJax = {
     tex: {
       inlineMath: [['$', '$'], ["\\(", "\\)"]],
       processEscapes: true,
     }
   }
-</script>
-<title>Parsing In-line PHP With Nginx</title>
-<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
-</head>
-<body><header id=banner>
-<h2><a href=https://mattconn.github.io>MattConn</a></h2>
-<nav>
-<ul>
-<li>
-<a href=https://mattconn.github.io/ title>Home</a>
-</li>
-<li>
-<a href=https://mattconn.github.io/about title>About</a>
-</li>
-<li>
-<a href=https://mattconn.github.io/work title>Work</a>
-</li>
-<li>
-<a href=https://mattconn.github.io/posts title>Posts</a>
-</li>
-<li>
-<a href=https://mattconn.github.io/resume title>Resume</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=content>
-<article>
-<header id=post-header>
-<h1>Parsing In-line PHP With Nginx</h1><time>January 2, 2017</time></header><h3 id=my-environment>My Environment</h3>
-<ul>
-<li>Nginx version
-<ul>
-<li>1.10.0</li>
-</ul>
-</li>
-<li>PHP version
-<ul>
-<li>7.0</li>
-</ul>
-</li>
-<li>FastCGI processor
-<ul>
-<li>php7.0-fpm</li>
-</ul>
-</li>
-<li>Kernel
-<ul>
-<li>Ubuntu 16.04</li>
-</ul>
-</li>
-</ul>
-<h2 id=the-first-and-more-obvious-step>The First And More Obvious Step</h2>
-<p>To enable parsing of PHP in HTML files, editing a server block&rsquo;s location block to include files with an HTML extension should be sufficient.</p>
-<p>For example:</p>
-<pre tabindex=0><code># /etc/nginx/sites-available/mywebsite.com
+</script><title>Parsing In-line PHP With Nginx</title><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></head><body><header id=banner><h2><a href=https://mattconn.github.io>MattConn</a></h2><nav><ul><li><a href=https://mattconn.github.io/ title>Home</a></li><li><a href=https://mattconn.github.io/about title>About</a></li><li><a href=https://mattconn.github.io/work title>Work</a></li><li><a href=https://mattconn.github.io/posts title>Posts</a></li><li><a href=https://mattconn.github.io/resume title>Resume</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>Parsing In-line PHP With Nginx</h1><time>January 2, 2017</time></header><h3 id=my-environment>My Environment</h3><ul><li>Nginx version<ul><li>1.10.0</li></ul></li><li>PHP version<ul><li>7.0</li></ul></li><li>FastCGI processor<ul><li>php7.0-fpm</li></ul></li><li>Kernel<ul><li>Ubuntu 16.04</li></ul></li></ul><h2 id=the-first-and-more-obvious-step>The First And More Obvious Step</h2><p>To enable parsing of PHP in HTML files, editing a server block&rsquo;s location block to include files with an HTML extension should be sufficient.</p><p>For example:</p><pre tabindex=0><code># /etc/nginx/sites-available/mywebsite.com
 location ~ \.(php|html)$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 }
-</code></pre><p>However, since I am working with PHP 7, whose full name is &ldquo;php7.0&rdquo; (which is usefully descriptive but makes things tricky when initially looking for related directories or daemons), I had an extra step in order to make this work. And apparently, all PHP versions, from late php5.* to php7.0, will require this extra step.</p>
-<h2 id=the-final-and-not-so-obvious-step>The Final And Not-So-Obvious Step</h2>
-<p>You&rsquo;ll now have to edit <code>php-fpm.conf</code>, or preferrably one of its included files; namely, <code>www.conf</code>.<br>
-For me, <code>php-fpm.conf</code> lives at <code>/etc/php/7.0/</code>, with <code>www.conf</code> in directory <code>pool.d</code>.</p>
-<p>The line we are looking for in <code>www.conf</code> (or the line you can add to <code>php-fpm.conf</code> if you want) is <code>security.limit_extensions</code>, which, in conjunction with our Nginx configuration, will permit our specified file types to be parsed as PHP. You may have to uncomment it, and for me it read as such by default:</p>
-<p><code>security.limit_extensions = .php .php3 .php4 .php5 .php7</code></p>
-<p>Here we can add <code>.html</code> or <code>.htm</code>, or even <code>.js</code> (but then we&rsquo;d have to add <code>.js</code> to our Nginx location block as we did with <code>.html</code> earlier).</p>
-<p>Finally, we must now restart the php-fpm daemon, and of course, our Nginx server, for all changes to take effect.</p>
-<p>For me, signaling Nginx to reload works:<br>
-<code>nginx -s reload</code><br>
-(You will need root permissions for this.)</p>
-<p>For php-fpm, I use the service wrapper:<br>
-<code>service php7.0-fpm restart</code><br>
-(Root permissions needed again.)</p>
-<p>Now you should be all set to write in-line PHP in HTML files, or even JavaScript files, if your heart so desires.</p></article>
-</main><footer id=footer>
-</footer>
-</body>
-</html>
+</code></pre><p>However, since I am working with PHP 7, whose full name is &ldquo;php7.0&rdquo; (which is usefully descriptive but makes things tricky when initially looking for related directories or daemons), I had an extra step in order to make this work. And apparently, all PHP versions, from late php5.* to php7.0, will require this extra step.</p><h2 id=the-final-and-not-so-obvious-step>The Final And Not-So-Obvious Step</h2><p>You&rsquo;ll now have to edit <code>php-fpm.conf</code>, or preferrably one of its included files; namely, <code>www.conf</code>.<br>For me, <code>php-fpm.conf</code> lives at <code>/etc/php/7.0/</code>, with <code>www.conf</code> in directory <code>pool.d</code>.</p><p>The line we are looking for in <code>www.conf</code> (or the line you can add to <code>php-fpm.conf</code> if you want) is <code>security.limit_extensions</code>, which, in conjunction with our Nginx configuration, will permit our specified file types to be parsed as PHP. You may have to uncomment it, and for me it read as such by default:</p><p><code>security.limit_extensions = .php .php3 .php4 .php5 .php7</code></p><p>Here we can add <code>.html</code> or <code>.htm</code>, or even <code>.js</code> (but then we&rsquo;d have to add <code>.js</code> to our Nginx location block as we did with <code>.html</code> earlier).</p><p>Finally, we must now restart the php-fpm daemon, and of course, our Nginx server, for all changes to take effect.</p><p>For me, signaling Nginx to reload works:<br><code>nginx -s reload</code><br>(You will need root permissions for this.)</p><p>For php-fpm, I use the service wrapper:<br><code>service php7.0-fpm restart</code><br>(Root permissions needed again.)</p><p>Now you should be all set to write in-line PHP in HTML files, or even JavaScript files, if your heart so desires.</p></article></main><footer id=footer></footer></body></html>
