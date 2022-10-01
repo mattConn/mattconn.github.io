@@ -25,28 +25,16 @@ SectionPagesMenu = "main"
   url = "/"
 
 [[menu.main]]
-  name = "About"
-  weight = 2
-  identifier = "about"
-  url = "/about"
-
-[[menu.main]]
   name = "Work"
   weight = 3
   identifier = "Work"
   url = "/work"
 
 [[menu.main]]
-  name = "Posts"
-  weight = 4
-  identifier = "posts"
-  url = "/posts"
-
-[[menu.main]]
   name = "Resume"
   weight = 5
   identifier = "resume"
-  url = "/resume"
+  url = "https://docs.google.com/document/d/1xpLTFJak9plpU-bo0I6GRmdDIijkfauvG1_zgg2dopc/edit"
 
 
 [params.meta]

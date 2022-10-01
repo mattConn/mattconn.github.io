@@ -1,11 +1,11 @@
 ## Matthew Connelly's Developer Page
 
-![](/images/me.png)  
-_Speaking on JavaScript Game Development at Brooklyn JS, May 2019_
+![](/images/me_sf.jpeg)  
+_Lands End, San Francisco, February 2022_
 
 Hello! I'm a creative developer with a background in Computer Science, currently a UX Engineer at [Harbour](https://harbourshare.com/).   
 
-My favorite programming languages in no particular order are: C/C++, Python, JavaScript and Go.
+My favorite programming languages in no particular order are: C/C++, Python, and JavaScript.
 
 You can contact me at matthew.b.connelly at gmail.
 
