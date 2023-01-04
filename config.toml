@@ -25,10 +25,16 @@ SectionPagesMenu = "main"
   url = "/"
 
 [[menu.main]]
-  name = "Work"
-  weight = 3
-  identifier = "Work"
-  url = "/work"
+  name = "Timeline"
+  weight = 1
+  identifier = "timeline"
+  url = "/timeline"
+
+[[menu.main]]
+  name = "GitHub"
+  weight = 5
+  identifier = "github"
+  url = "https://github.com/mattConn"
 
 [[menu.main]]
   name = "Resume"

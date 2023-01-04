@@ -252,6 +252,40 @@ main#content pre code {
     padding: 0;
 }
 
+/* timeline page styles */
+.timeline-event {
+    display: flex;
+}
+
+.timeline-event .timeline-event_copy {
+    padding: 0 1em;
+}
+
+.timeline-event .timeline-event_copy.current {
+    background-color: #dedef9;
+}
+
+/*
+Making this shape:
+
+      |
+ 201x |-- Event
+      |
+
+There is a vertical line, and a horizontal line per event.
+*/
+/* vertical line */
+.timeline-event .timeline-event_lines {
+    border-left: 3px solid black;
+}
+
+/* horizontal line */
+.timeline-event .timeline-event_lines div {
+    border-bottom: solid 1px black;
+    padding: 1em;
+}
+/* end timeline page styles */
+
 footer#footer {
     font-size: 14px;
     font-size: 1.4rem;
