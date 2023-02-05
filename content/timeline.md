@@ -71,7 +71,7 @@ title: 'Timeline'
 </div>
 <div class = "timeline-event">
     <div class="timeline-event_copy">
-        <h1>2030</h1>
+        <h1>202?</h1>
     </div>
     <!-- vertical and horizontal lines -->
     <div class="timeline-event_lines">
@@ -79,9 +79,12 @@ title: 'Timeline'
         </div>
     </div>
     <div class="timeline-event_copy">
-        <h1>Powerful Code Wizard 🧙‍♂️</h1>
-        <p>Wise and empathetic.</p>
-        <p>Making coding easier for everyone via documentation and communication.</p>
+        <h1>??? 👨‍💻</h1>
+        <p>Experienced and empathetic.</p>
+        <p>Making coding easier for everyone.</p>
         <p>Making products better for everyone.</p>
+        <p>Still learning.</p>
     </div>
 </div>
+
+[Source](https://github.com/mattConn/mattconn.github.io/edit/master/content/timeline.md)
