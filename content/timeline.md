@@ -80,7 +80,6 @@ title: 'Timeline'
     </div>
     <div class="timeline-event_copy">
         <h1>??? 👨‍💻</h1>
-        <p>Experienced and empathetic.</p>
         <p>Making coding easier for everyone.</p>
         <p>Making products better for everyone.</p>
         <p>Still learning.</p>
