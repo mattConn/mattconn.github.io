@@ -1,5 +1,18 @@
 ---
-title: "Work"
+title: "Projects"
+---
+
+## [Cat and Mouse](https://mattconn.itch.io/cat-and-mouse)
+<a href = "https://mattconn.itch.io/cat-and-mouse" target="_blank">
+<img src="/images/catandmouse.png" />
+</a>
+
+### Made with: JavaScript
+
+Can you survive?
+  
+[Play](https://mattconn.itch.io/cat-and-mouse) | [Source Code](https://github.com/mattConn/cat-and-mouse)  
+
 ---
 
 ## [Coinpicker](https://coinpicker.pages.dev/)

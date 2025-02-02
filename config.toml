@@ -25,16 +25,10 @@ SectionPagesMenu = "main"
   url = "/"
 
 [[menu.main]]
-  name = "Work"
+  name = "Projects"
   weight = 1
-  identifier = "work"
-  url = "/work"
-
-[[menu.main]]
-  name = "Timeline"
-  weight = 2
-  identifier = "timeline"
-  url = "/timeline"
+  identifier = "projects"
+  url = "/projects"
 
 [[menu.main]]
   name = "GitHub"
