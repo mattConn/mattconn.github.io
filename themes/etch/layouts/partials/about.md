@@ -3,7 +3,7 @@
 ![](/images/me_sf.jpeg)  
 _Lands End, San Francisco, February 2022_
 
-Hello! I'm a creative developer with a background in Computer Science, currently a UX Engineer at [Harbour](https://harbourshare.com/).   
+Hello! I'm a creative developer with a background in Computer Science and Communications, currently a Sales Engineer at [SuperDoc](https://www.superdoc.dev/).   
 
 My favorite programming languages in no particular order are: C/C++, Python, and JavaScript.
 
